@@ -24,8 +24,6 @@ void setup(){
   pinMode(btn,INPUT);
   m.init();
   m.setIntensity(1);
-
-//  Serial.begin(9600); 
   
 }
 
@@ -40,7 +38,6 @@ GAMEOVER=false;
     barrier(i,1);
 
     //check button
-//    readSerialInput();
     if (digitalRead(btn) == LOW) ST = 1;
     
     //human activities choose
@@ -103,8 +100,8 @@ void running_Human(int st){
   
     //deleting last step (leg)
     m.setDot(2,7,0);
-  }else 
-  if(st==0){
+    
+  }else if(st==0){
   
     //leg
     m.setDot(2,7,1);
@@ -137,54 +134,54 @@ void jumping_Human(int st){
   switch(humanJump_Duration){
     case 0:
       //body
-    m.setDot(2,4,st);
-    m.setDot(2,5,st);
-    m.setDot(2,6,st);
+      m.setDot(2,4,st);
+      m.setDot(2,5,st);
+      m.setDot(2,6,st);
   
-    //hand
-    m.setDot(3,5,st);
+      //hand
+      m.setDot(3,5,st);
 
-    //leg
-    m.setDot(2,7,st);
+      //leg
+      m.setDot(2,7,st);
       break;
       
     case 1:
-    //body
-    m.setDot(3,4,st);
-    m.setDot(3,3,st);
-    m.setDot(4,3,st);
-    m.setDot(5,3,st);
+      //body
+      m.setDot(3,4,st);
+      m.setDot(3,3,st);
+      m.setDot(4,3,st);
+      m.setDot(5,3,st);
 
-    //hand
+      //hand
 
-    //leg
-    m.setDot(2,4,st);
+      //leg
+      m.setDot(2,4,st);
       break;
       
     case 2:
       //body
-    m.setDot(3,4,st);
-    m.setDot(4,3,st);
-    m.setDot(4,2,st);
-    m.setDot(3,2,st);
+      m.setDot(3,4,st);
+      m.setDot(4,3,st);
+      m.setDot(4,2,st);
+      m.setDot(3,2,st);
   
-    //hand
+      //hand
 
-    //leg
-    m.setDot(3,1,st);
+      //leg
+      m.setDot(3,1,st);
       break;
       
     case 3:
       //body
-    m.setDot(3,2,st);
-    m.setDot(4,3,st);
-    m.setDot(5,3,st);
-    m.setDot(5,2,st);
+      m.setDot(3,2,st);
+      m.setDot(4,3,st);
+      m.setDot(5,3,st);
+      m.setDot(5,2,st);
   
-    //hand
+      //hand
 
-    //leg
-    m.setDot(6,2,st);
+      //leg
+      m.setDot(6,2,st);
       break;
       
     case 4:
@@ -198,7 +195,7 @@ void jumping_Human(int st){
 
       //leg
       m.setDot(4,5,st);
-//GAME OVER
+      //GAME OVER
       if(barrierLoc >= 2 && barrierLoc <= 5 && st == 1){
         gameOver();
         ST=0;
@@ -208,23 +205,24 @@ void jumping_Human(int st){
       
     case 5:
       //body
-    m.setDot(3,4,st);
-    m.setDot(3,5,st);
-    m.setDot(3,6,st);
+      m.setDot(3,4,st);
+      m.setDot(3,5,st);
+      m.setDot(3,6,st);
   
-    //hand
-    m.setDot(4,5,st);
+      //hand
+      m.setDot(4,5,st);
 
-    //leg
-    m.setDot(3,7,st);
+      //leg
+      m.setDot(3,7,st);
 
-ST=0;
+      ST=0;
     break;
   }
 }
+
 void gameOver(){
-  GAMEOVER=true;
-//  Serial.println("called");
+    GAMEOVER=true;
+
     for (int i=0; i<8; i++){
       m.setColumn(i,1);
       m.setColumn(15-i,1);
@@ -235,5 +233,6 @@ void gameOver(){
       m.setColumn(8+i,0);
       delay(100);
     }
+  
   }
 
