@@ -7,7 +7,7 @@ push Button<br />
 10 kΩ Resistor for Button pull-up
 
 # Output
-<b>SOON!</b>
+![preview](./runorjump.gif)
 
 # Schematic
 <b>SOON!</b>
