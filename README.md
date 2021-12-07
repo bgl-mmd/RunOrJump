@@ -9,5 +9,3 @@ push Button<br />
 # Output
 ![preview](./runorjump.gif)
 
-# Schematic
-<b>SOON!</b>
